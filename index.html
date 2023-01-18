@@ -21,6 +21,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script async src="https://api.countapi.xyz/hit/mysite.com/visits?  callback=callbackName"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -659,6 +661,7 @@
             <div class="d-flex justify-content-center py-2">
                 <p class="text-white" href="#"><i class="fas fa-solid fa-phone"></i> +91 9806147032</p>
             </div>
+            <h3 style="color:white;">This page got <span id="visits"></span> views.</h3>
             <p class="m-0"><a class="text-primary" href="#"></a> Designed by <a class="text-primary" href="https://shantanupalecha.wixsite.com/shantanu">Shantanu Palecha</a>
             </p>
         </div>
@@ -681,7 +684,11 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
+    <script type="text/javascript">
+        function callbackName(response) {
+            document.getElementById('visits').innerText = response.value;
+        }
+    </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
